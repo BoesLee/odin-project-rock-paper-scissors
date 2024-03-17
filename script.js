@@ -44,3 +44,5 @@ for(let i = rounds; i > 0; i--) {
     playerSelection = getPlayerSelection();
     playGame();
 }
+
+// optional: include scoreboard

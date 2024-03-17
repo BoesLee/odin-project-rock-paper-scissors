@@ -1,1 +1,6 @@
-# odin-project-rock-paper-scissors
+# Odin Project: Rock Paper Scissors
+Foundations course 
+
+# Functional
+
+# Optional goals left for later 
