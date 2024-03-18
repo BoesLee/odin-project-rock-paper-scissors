@@ -2,7 +2,7 @@
 const options = ["rock", "paper", "scissors"];
 
 // Generate computerSelection
-function getComputerSelection() {
+function getComputerChoice() {
     const min = 0;
     const max = (options.length)-1;
     let computerSelection = Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -10,15 +10,15 @@ function getComputerSelection() {
 }
 
 // Prompt playerSelection
-function getPlayerSelection() {
+function getPlayerChoice() {
     // optional: look for better way to prompt, for learning reasons
     let playerSelection = prompt(`Select ${options[0]}, ${options[1]}, ${options[2]}`);
-    playerSelection.toLowerCase();
+    playerSelection = playerSelection.toLowerCase();
     // REPEAT-UNTIL PlayerSelection included in Array
     if (options.includes(playerSelection)) {
         return options.indexOf(playerSelection);   
     }
-    return getPlayerSelection();
+    return getPlayerChoice();
 }
 
 // Get results
@@ -40,8 +40,8 @@ let rounds = prompt("How many rounds?");
 let computerSelection;
 let playerSelection;
 for(let i = rounds; i > 0; i--) {
-    computerSelection = getComputerSelection();
-    playerSelection = getPlayerSelection();
+    computerSelection = getComputerChoice();
+    playerSelection = getPlayerChoice();
     playGame();
 }
 
