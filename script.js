@@ -3,17 +3,17 @@ const options = ["rock", "paper", "scissors"];
 function getComputerChoice() {
     const min = 0;
     const max = (options.length)-1;
-    // A Proper Random Function according to https://www.w3schools.com/JS/js_random.asp.
+    // A Proper Random Function, according to https://www.w3schools.com/JS/js_random.asp.
     let computerSelection = Math.floor(Math.random() * (max - min + 1) ) + min;
     return computerSelection;
 }
 
 function getPlayerChoice() {
-    // optional: look for better way to prompt, for learning reasons.
+    // optional: research better way to access the array (if possible), for learning reasons... 
     let playerSelection = prompt(`Select ${options[0]}, ${options[1]}, ${options[2]}`);
     playerSelection = playerSelection.toLowerCase();
     if (options.includes(playerSelection)) {
-        // The array's index, instead of the word, makes math possible in the playgame() function.
+        // The array's index, instead of the string, makes math possible in the playGame() function.
         return options.indexOf(playerSelection);   
     }
     return getPlayerChoice();
