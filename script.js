@@ -29,7 +29,11 @@ function playGame(playerSelection) {
         alert(`You lose this round, ${options[computerSelection]} beats ${options[playerSelection]}!`);
         computerScore++;
     }
-    document.getElementById('score').textContent = `${playerScore} - ${computerScore}`;
+    document.getElementById('brand').textContent = `Score`;
+    document.getElementById('pScore').textContent = `You: ${playerScore}`;
+
+    document.getElementById('cScore').textContent = `Not-You: ${computerScore}`;
+    document.getElementById('cScore').style.display = "inherit";
     if(playerScore == 5) {
         alert(`You win!`);
         resetGame();
