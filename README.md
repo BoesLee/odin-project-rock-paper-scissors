@@ -2,6 +2,4 @@
 Foundations course
 
 # Functional
-In accordance with the [assignment](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors#assignment)
-
-# Optional goals left for later
+In accordance with the [assignment](https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors)
