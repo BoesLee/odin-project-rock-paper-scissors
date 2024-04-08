@@ -1,4 +1,12 @@
 const options = ["rock", "paper", "scissors"];
+let playerScore = 0;
+let computerScore= 0;
+
+function resetGame() {
+    playerScore = 0;
+    computerScore= 0;
+    document.getElementById('score').textContent = "Press any button to play again";
+}
 
 function getComputerChoice() {
     const min = 0;
@@ -8,37 +16,26 @@ function getComputerChoice() {
     return computerSelection;
 }
 
-function getPlayerChoice() {
-    // optional: research better way to access the array (if possible), for learning reasons... 
-    let playerSelection = prompt(`Select ${options[0]}, ${options[1]}, ${options[2]}`);
-    playerSelection = playerSelection.toLowerCase();
-    if (options.includes(playerSelection)) {
-        // The array's index, instead of the string, makes math possible in the playGame() function.
-        return options.indexOf(playerSelection);   
-    }
-    return getPlayerChoice();
-}
-
-function playGame() {
+function playGame(playerSelection) {
+    let computerSelection = getComputerChoice();
     if(playerSelection - computerSelection == 0) {
         alert("Draw!");
     }
     else if(playerSelection - computerSelection == 1 || playerSelection - computerSelection == -2) {
-        alert(`You win, ${options[playerSelection]} beats ${options[computerSelection]}!`);
+        alert(`You win this round, ${options[playerSelection]} beats ${options[computerSelection]}!`);
+        playerScore++;
     }
     else {
-        alert(`You lose, ${options[computerSelection]} beats ${options[playerSelection]}!`);
+        alert(`You lose this round, ${options[computerSelection]} beats ${options[playerSelection]}!`);
+        computerScore++;
+    }
+    document.getElementById('score').textContent = `${playerScore} - ${computerScore}`;
+    if(playerScore == 5) {
+        alert(`You win!`);
+        resetGame();
+    }
+    else if(computerScore == 5) {
+        alert(`You lose!`);
+        resetGame();
     }
 }
-
-// optional: improve readability / make it a function.
-let rounds = prompt("How many rounds?");
-let computerSelection;
-let playerSelection;
-for(let i = rounds; i > 0; i--) {
-    computerSelection = getComputerChoice();
-    playerSelection = getPlayerChoice();
-    playGame();
-}
-
-// optional: include scoreboard.

@@ -7,7 +7,23 @@
     <script src="./script.js"></script>
     <title>Project: Rock Paper Scissors</title>
 </head>
-<body>
-    
-</body>
+<div class="container">
+    <div class="section centered">
+        <h1 id="score">
+            0 - 0
+        </h1>
+    </div>
+    <div class="section">
+        <div class="box">
+                <button value=0 onclick="playGame(this.value)" style="all: unset">
+                    <img src="images/rock.jpg" alt="the Rock representing a Rock" class="button border">
+                </button>
+                <button value=1 onclick="playGame(this.value)" style="all: unset">
+                    <img src="images/paper.jpg" alt="a Paper with a face representing Paper" class="button border">
+                </button>
+                <button value=2 onclick="playGame(this.value)" style="all: unset">
+                    <img src="images/scissors.jpg" alt="Scissorhands representing Scissors" class="button border">
+                </button>
+        </div>
+    </div>
 </html>
